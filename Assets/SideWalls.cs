@@ -9,6 +9,7 @@ public class SideWalls : MonoBehaviour
         if (hitInfo.name == "Ball")
         {
             string wallName = transform.name;
+            GetComponent<AudioSource>().Play();
             gm.Score(wallName);
             hitInfo.gameObject.SendMessage("ResetBall");
         }

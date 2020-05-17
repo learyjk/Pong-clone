@@ -17,6 +17,8 @@ public class BallControl : MonoBehaviour
         if (colInfo.collider.tag == "Player") {
             // Ball speed increases a bit with each hit and is dependent upon 1/3 of paddle speed.
             rb.velocity = new Vector2(rb.velocity.x * 1.02f, rb.velocity.y/2 + colInfo.rigidbody.velocity.y/3);
+            GetComponent<AudioSource>().pitch = Random.Range(0.8f, 1.2f);
+            GetComponent<AudioSource>().Play();
         }
     }
 

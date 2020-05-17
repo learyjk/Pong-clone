@@ -15,8 +15,6 @@ public class GameManager : MonoBehaviour
         else {
             playerScore02 += 1;
         }
-        Debug.Log("Player Score 1 is " + playerScore01);
-        Debug.Log("Player Score 2 is " + playerScore02);
     }
 
     void OnGUI() {
