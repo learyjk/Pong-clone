@@ -10,6 +10,7 @@ public class SideWalls : MonoBehaviour
         {
             string wallName = transform.name;
             gm.Score(wallName);
+            hitInfo.gameObject.SendMessage("ResetBall");
         }
     }
 }
