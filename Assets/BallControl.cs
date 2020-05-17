@@ -19,12 +19,6 @@ public class BallControl : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     void OnCollisionEnter2D(Collision2D colInfo) {
         if (colInfo.collider.tag == "Player") {
             // Ball speed increases a bit with each hit and is dependent upon 1/3 of paddle speed.
