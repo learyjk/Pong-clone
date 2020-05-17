@@ -7,6 +7,12 @@ public class GameManager : MonoBehaviour
 
     public GUISkin theSkin;
 
+    public Transform theBall;
+
+    void Start() {
+        theBall = GameObject.FindWithTag("Ball").transform;
+    }
+
     public void Score(string wallName)
     {
         if (wallName == "rightWall") {
@@ -19,7 +25,14 @@ public class GameManager : MonoBehaviour
 
     void OnGUI() {
         GUI.skin = theSkin;
-        GUI.Label(new Rect(Screen.width/2 - 150, 20, 100, 100), "" + playerScore01);
-        GUI.Label(new Rect(Screen.width/2 + 150, 20, 100, 100), "" + playerScore02);
+        GUI.Label(new Rect(Screen.width/2 - 150 - 22, 20, 100, 100), "" + playerScore01);
+        GUI.Label(new Rect(Screen.width/2 + 150 - 22, 20, 100, 100), "" + playerScore02);
+
+        if (GUI.Button(new Rect(Screen.width/2 - 121/2, 35, 121, 53), "RESET")) {
+            playerScore01 = 0;
+            playerScore02 = 0;
+
+            theBall.SendMessage("ResetBall");
+        }
     }
 }
